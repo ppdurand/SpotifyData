@@ -46,7 +46,7 @@ public class SearchController {
         var token = authSpotifyClient.login(request).getAcessToken();
         var response = searchClient.searchArtist("Bearer " + token,
                                                     json.get("q"), json.get("type"));
-        return ResponseEntity.ok(response.getArtist().getItems());
+        return ResponseEntity.ok(response.getArtists().getItems());
     }
 
     @GetMapping("/track")

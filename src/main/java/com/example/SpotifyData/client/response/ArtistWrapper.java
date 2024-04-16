@@ -13,6 +13,9 @@ public class ArtistWrapper {
         this.items = items;
     }
 
+    public ArtistWrapper() {
+    }
+
     public List<Artist> getItems() {
         return items;
     }

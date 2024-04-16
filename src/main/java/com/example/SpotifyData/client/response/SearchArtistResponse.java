@@ -8,20 +8,20 @@ import java.util.List;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class SearchArtistResponse {
-    private ArtistWrapper artist;
+    private ArtistWrapper artists;
 
-    public SearchArtistResponse(ArtistWrapper artist) {
-        this.artist = artist;
+    public SearchArtistResponse(ArtistWrapper artists) {
+        this.artists = artists;
     }
 
     public SearchArtistResponse() {
     }
 
-    public ArtistWrapper getArtist() {
-        return artist;
+    public ArtistWrapper getArtists() {
+        return artists;
     }
 
-    public void setArtist(ArtistWrapper artist) {
-        this.artist = artist;
+    public void setArtist(ArtistWrapper artists) {
+        this.artists = artists;
     }
 }

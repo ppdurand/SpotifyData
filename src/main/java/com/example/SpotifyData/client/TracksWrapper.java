@@ -1,10 +1,16 @@
 package com.example.SpotifyData.client;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+import java.util.List;
+
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class TracksWrapper {
     private Integer total;
-    private TrackObject items;
+    private List<TrackObject> items;
 
-    public TracksWrapper(Integer total, TrackObject items) {
+    public TracksWrapper(Integer total, List<TrackObject> items) {
         this.total = total;
         this.items = items;
     }
@@ -20,11 +26,11 @@ public class TracksWrapper {
         this.total = total;
     }
 
-    public TrackObject getItems() {
+    public List<TrackObject> getItems() {
         return items;
     }
 
-    public void setItems(TrackObject items) {
+    public void setItems(List<TrackObject> items) {
         this.items = items;
     }
 }

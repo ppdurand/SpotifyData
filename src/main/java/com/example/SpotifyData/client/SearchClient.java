@@ -1,13 +1,12 @@
 package com.example.SpotifyData.client;
 
-import com.example.SpotifyData.client.response.SearchAlbumResponse;
+import com.example.SpotifyData.client.response.SearchArtistResponse;
+import com.example.SpotifyData.client.response.SearchTrackResponse;
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.List;
 
 @FeignClient(
        name = "SearchClient",
@@ -16,7 +15,15 @@ import java.util.List;
 @Headers("Content-Type: application/json")
 public interface SearchClient {
 
-    @GetMapping(value ="/search?q={q}&type={type}")
-    AlbumResponse search(@RequestHeader("Authorization") String authorization,
+    @GetMapping("/search?q={q}&type={type}")
+    AlbumResponse searchAlbum(@RequestHeader("Authorization") String authorization,
                               @RequestParam("q") String q, @RequestParam("type") String type);
+
+    @GetMapping("/search?q={q}&type={type}")
+    SearchArtistResponse searchArtist(@RequestHeader("Authorization") String authorization,
+                                      @RequestParam("q") String q, @RequestParam("type") String type);
+
+    @GetMapping("/search?q={q}&type={type}")
+    SearchTrackResponse searchTrack(@RequestHeader("Authorization") String authorization,
+                                    @RequestParam("q") String q, @RequestParam("type") String type);
 }

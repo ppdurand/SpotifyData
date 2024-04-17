@@ -1,4 +1,4 @@
-package com.example.SpotifyData.client.response;
+package com.example.SpotifyData.client;
 
 import com.example.SpotifyData.model.Artist;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;

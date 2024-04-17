@@ -1,6 +1,6 @@
 package com.example.SpotifyData.controller;
 
-import com.example.SpotifyData.client.Album;
+import com.example.SpotifyData.model.Album;
 import com.example.SpotifyData.client.AlbumSpotifyClient;
 import com.example.SpotifyData.client.AuthSpotifyClient;
 import com.example.SpotifyData.client.LoginRequest;

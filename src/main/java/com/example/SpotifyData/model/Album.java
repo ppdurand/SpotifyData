@@ -1,6 +1,5 @@
-package com.example.SpotifyData.client;
+package com.example.SpotifyData.model;
 
-import com.example.SpotifyData.model.Artist;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
@@ -8,13 +7,12 @@ import java.util.List;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class Album {
-    private String id;
+    ///private String id;
     private String name;
     private String releaseDate;
     private List<Artist> artists;
 
-    public Album(String id, String name, String releaseDate, List<Artist> artists) {
-        this.id = id;
+    public Album(String name, String releaseDate, List<Artist> artists) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.artists = artists;
@@ -23,13 +21,13 @@ public class Album {
     public Album() {
     }
 
-    public String getId() {
-        return id;
-    }
+    //public String getId() {
+    //    return id;
+    //}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    //public void setId(String id) {
+    ///    this.id = id;
+    //}
 
     public String getName() {
         return name;

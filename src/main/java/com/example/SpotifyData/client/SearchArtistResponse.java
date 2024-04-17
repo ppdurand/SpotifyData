@@ -1,10 +1,8 @@
-package com.example.SpotifyData.client.response;
+package com.example.SpotifyData.client;
 
-import com.example.SpotifyData.model.Artist;
+import com.example.SpotifyData.client.ArtistWrapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-
-import java.util.List;
 
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class SearchArtistResponse {

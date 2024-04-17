@@ -1,5 +1,6 @@
 package com.example.SpotifyData.client;
 
+import com.example.SpotifyData.model.TrackObject;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 

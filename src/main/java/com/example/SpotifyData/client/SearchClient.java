@@ -1,7 +1,5 @@
 package com.example.SpotifyData.client;
 
-import com.example.SpotifyData.client.response.SearchArtistResponse;
-import com.example.SpotifyData.client.response.SearchTrackResponse;
 import feign.Headers;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +22,6 @@ public interface SearchClient {
                                       @RequestParam("q") String q, @RequestParam("type") String type);
 
     @GetMapping("/search?q={q}&type={type}")
-    SearchTrackResponse searchTrack(@RequestHeader("Authorization") String authorization,
-                                    @RequestParam("q") String q, @RequestParam("type") String type);
+    AlbumSpotifyClient.SearchTrackResponse searchTrack(@RequestHeader("Authorization") String authorization,
+                                                       @RequestParam("q") String q, @RequestParam("type") String type);
 }

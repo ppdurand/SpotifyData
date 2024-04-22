@@ -2,6 +2,7 @@ package com.example.SpotifyData.controller;
 
 import com.example.SpotifyData.client.*;
 import com.example.SpotifyData.exceptions.NullQueryException;
+import com.example.SpotifyData.exceptions.NullTypeException;
 import com.example.SpotifyData.model.Album;
 import com.example.SpotifyData.model.Artist;
 import com.example.SpotifyData.model.Search;
@@ -36,6 +37,7 @@ public class SearchController {
     @GetMapping("/album")
     public ResponseEntity<List<Album>> searchAlbum(@RequestBody Search search){
         if (search.getQ() == null) throw new NullQueryException();
+        if (search.getType() == null) throw new NullTypeException();
 
         var request = new LoginRequest(grantType, clientId, clientSecret);
         var token = authSpotifyClient.login(request).getAcessToken();
@@ -48,6 +50,7 @@ public class SearchController {
     @GetMapping("/artist")
     public ResponseEntity<List<Artist>> searchArtist(@RequestBody @Valid Search search) {
         if (search.getQ() == null) throw new NullQueryException();
+        if (search.getType() == null) throw new NullTypeException();
 
         var request = new LoginRequest(grantType, clientId, clientSecret);
         var token = authSpotifyClient.login(request).getAcessToken();
@@ -59,6 +62,7 @@ public class SearchController {
     @GetMapping("/track")
     public ResponseEntity<List<TrackObject>> searchTrack(@RequestBody @Valid Search search){
         if (search.getQ() == null) throw new NullQueryException();
+        if (search.getType() == null) throw new NullTypeException();
 
         var request = new LoginRequest(grantType, clientId, clientSecret);
         var token = authSpotifyClient.login(request).getAcessToken();

@@ -1,6 +1,7 @@
 package com.example.SpotifyData.infra;
 
 import com.example.SpotifyData.exceptions.NullQueryException;
+import com.example.SpotifyData.exceptions.NullTypeException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -14,6 +15,12 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
 
     @ExceptionHandler(NullQueryException.class)
     private ResponseEntity<DefaultErrorMessage> nullQueryHandler(NullQueryException exception){
+        DefaultErrorMessage threatResponse = new DefaultErrorMessage(HttpStatus.BAD_REQUEST, exception.getMessage());
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(threatResponse);
+    }
+
+    @ExceptionHandler(NullTypeException.class)
+    private ResponseEntity<DefaultErrorMessage> nullTypeHandler(NullTypeException exception){
         DefaultErrorMessage threatResponse = new DefaultErrorMessage(HttpStatus.BAD_REQUEST, exception.getMessage());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(threatResponse);
     }

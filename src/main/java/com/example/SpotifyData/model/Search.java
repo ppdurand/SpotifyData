@@ -4,10 +4,8 @@ import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotNull;
 
 public class Search {
-
-    @NotNull(message = "Pesquise algo no campo")
+    
     private String q;
-    @NotNull(message = "Digite algo no campo")
     private String type;
 
     public Search(String q, String type) {
